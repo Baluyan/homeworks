@@ -1,0 +1,261 @@
+//1
+
+function checkNumber(num){
+	
+	if(num%2==0){
+
+		console.log("even")
+
+	}
+
+    else   {console.log("odd")}
+
+}
+
+//checkNumber(123);
+//checkNumber(35);
+//checkNumber(70);
+
+
+//2
+
+function isDivisable(num1,num2){
+	
+if(num1%num2==0||num2%num1==0){
+	
+	console.log(1)
+}
+
+else{console.log(0);}
+
+
+}
+ //isDivisable(3,14);
+ //isDivisable(18,2);
+ //isDivisable(7,21);
+ 
+
+ //3
+
+function valueOfN(n){
+
+
+let str= n.toString();
+
+let t1= str+str;
+
+let t2= str+str+str;
+
+let total=n+parseInt(t1)+parseInt(t2);
+
+console.log(total);
+
+}
+
+//valueOfN(100)
+
+
+ //4
+
+ function moveToBegining(num){
+ 
+
+ var rest=num%10;
+
+
+if(num<10||num%10==0){
+	
+	console.log(num);
+}
+
+else{ console.log(num=rest+(Math.floor(num/10 )).toString())}
+
+
+ }
+
+moveToBegining(10)
+
+
+ //5
+
+function average(a,b,c,d,e){
+	
+    var result = (a+b+c+d+e) / 5;
+    console.log( result);
+
+}
+ 
+ average(2,3,8,7,4)
+
+ //6 nayel
+
+function sortNumberAsc(a, b) {
+  return a - b;
+}
+
+var numArray = [45,26,78];
+numArray.sort(sortNumberAsc);
+
+console.log(numArray);
+
+
+
+
+
+//7
+
+
+function findSign(a,b,c){
+	
+if ((a < 0 && b > 0 && c > 0) || (b < 0 && a > 0 && c > 0) || (c < 0 && a > 0 && b > 0) || (a < 0 && b < 0 && c < 0))
+        {
+            console.log("-");
+        }
+        else if ((a < 0 && b < 0 && c > 0) || (a < 0 && c < 0 && b > 0) || (b < 0 && c < 0 && a > 0) || (a > 0 && b > 0 && c > 0))
+        {
+            console.log("+");
+        }
+        else if (a == 0 || b == 0 || c == 0)
+        {
+            console.log("unsigned");
+        }
+
+}
+
+findSign(-14,5,0)
+
+//8 discriminant = b*b-4*a*c
+
+function getRoots(a, b, c) {
+    const numeratorRoot = Math.sqrt((b * b) - 4 * a * c);
+
+
+if(a==0){
+	
+
+	console.log("Invalid Input, a should not be 0")
+}
+
+  else {
+  		const denominator = 2 * a;
+   		 const root = (-b + numeratorRoot) / denominator;
+   		 
+
+   		 return root;
+
+   		 }  
+}
+
+
+
+console.log(getRoots(1,2,1)) 
+
+//9
+
+
+function twoIf(n){
+	
+	var i=0;
+	var j=0;
+	 if (n%2===0&&!Math.floor(n/10)){
+
+	 		i+=1;
+	 }
+
+
+else if(n%3===0&&n%10===1){
+	
+	j+=1
+
+}
+//10
+function containDig(number, dig){
+	
+
+if (number < 0) {
+number *= -1;
+ }
+ else if (number == dig) {
+
+ return true;
+    }
+
+    while (number != 0) {
+        if (number % 10 == dig) {
+            return true;
+        }
+        number = Math.floor(number / 10); 
+    }
+    return false;
+
+
+}
+console.log(containDig(10,1))
+
+
+// 11
+function exchange(n){
+let num=n;
+let last=n%10;
+c=1;
+while (n>0)
+{
+   first=n%10;
+   c*=10;
+   n=(n-first)/10;
+}
+d=(c/10);
+f=(num%d)+d*last;
+
+console.log((f-f%10)+first);
+
+}
+exchange(528)
+
+//12
+
+  function calc() {
+  var area;
+  var trianOrRec = prompt("Enter the parameteres fro what tou want to calc area", "triangleortectangle");
+  var width = parseInt(prompt("Enter the base of triangle,or the width of the rectangle:"));
+  var height = parseInt(prompt("Enter the height of triangle, or the heigh of the rectangle:"));
+  switch(trianOrRec) {
+    case "triangle":
+      var area = (width * height) / 2;
+      break;
+    case "rectangle":
+     var area=width*height;
+      break;
+
+    default:
+      text = "Please enter only posotive numbers";
+  }
+  return area;
+}
+
+ calc() 
+
+
+  //13
+
+function largestSmallest(num){
+	
+ var largest = 0; 
+ var smallest = 9; 
+ var calc;
+    while(num != 0)  
+    { 
+       var calc = num % 10; 
+  
+      var largest = Math.floor(Math.max(calc, largest)); 
+  
+      var  smallest = Math.ceil(Math.min(calc, smallest)); 
+  
+        num = num / 10; 
+    } 
+
+    console.log(largest + " " + smallest); 
+
+}
+
+console.log(largestSmallest(187))
