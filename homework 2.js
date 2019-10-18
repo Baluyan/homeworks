@@ -27,7 +27,7 @@ function fibonacci(n) {
   return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-//console.log(fibonacci(3))
+console.log(fibonacci(3))
 
 
 
@@ -46,41 +46,56 @@ function fib (n)
     return arr;
   }
 };
+console.log(fib(3));
 
- //console.log(fib(3));
 
 
- //4 help!!!!!!!!!!!!!!!!!!!!!!!!!
- function pAndSum(num){
+ function pAndSum(n){;
 
-var temp = num,
- sum = 0, 
- product = 1;
- var d = temp % 10; 
-  temp = Math.floor(temp / 10);
- sum += d; 
- product *= d; 
+ var sum = 0;
 
- console.log(sum);
- console.log(product)
+ var product = 1;
+
+ while (n != 0) 
+
+        { 
+        
+             sum = sum + n % 10;
+
+            product=product*(n%10); 
+
+            n =Math.floor( n/10); 
+            
+        } 
+
+        
+
+        if(product%sum==0){
+
+
+            	console.log("The Quotient is" +  product/sum)
+            }
+            else if (product%sum!==0){
+
+            	console.log("the remainder is" +product/sum )
+            }
+
+            else{console.log("Cannot calculate")}
    
 }
- pAndSum(1233)
+console.log(pAndSum(1233)) ;
 
-// 5 help!!!!!!!!!!!!
 
-function arrByNum(a,b,num){
-
-	var arr=[];
-
-      for (var i=a; i<=b; i++) {
-
-           var arr = new Array(num).fill(i)
-}
-return arr;
+function startEnd(a, b, num) {
+  var arr = [];
+  var inter = (b - a) / (num - 1);
+  for (var i = 0; i < num; i++) {
+    arr.push(a + (inter * i));
+  }
+  return arr;
 }
 
-console.log(arrByNum(10,100,3))
+console.log(startEnd(1,5,6));
 
 
 //6
@@ -103,21 +118,26 @@ function secondLargeNumber(arr){
 	
 }
 
-//console.log(secondLargeNumber([23, -98, 0, -456, 12, 8]));
+console.log(secondLargeNumber([23, -98, 0, -456, 12, 8]));
 
 
-//7 cant deal
-function fillArray(arr,pad,repeat) {
+
+function fillArray(arr,pad) {
  
  	
- 	var first=arr[0];
- 	var last=arr[arr.length - 1];
- 	var lastArr=new Array(repeat).fill(last);
-    var firstArr=new Array(repeat).fill(first);
+ //	var first=arr[0];
+ //	var last=arr[arr.length - 1];
+ //	var lastArr=new Array(repeat).slice(0,pad);
+ //   var firstArr=new Array(repeat).slice(first,pad+1);
 
-   return firstArr.concat(arr,lastArr)
+ //  return firstArr.concat(arr,lastArr)
+ var lastArr=arr.slice(0,pad);
+ return lastArr;
 }
 
-console.log(fillArray([1,2,3,4], 3))
+console.log(fillArray([1,2,3,4], 2))
+
+
+
 
 
