@@ -13,7 +13,7 @@ function isPrime (num){
     return "yes";
 }
 
-console.log(isPrime(63))
+//console.log(isPrime(63))
 
 
 
@@ -27,7 +27,7 @@ function fibonacci(n) {
   return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-console.log(fibonacci(3))
+console.log(fibonacci(2))
 
 
 
@@ -46,10 +46,11 @@ function fib (n)
     return arr;
   }
 };
-console.log(fib(3));
+
+ //console.log(fib(3));
 
 
-
+ //4
  function pAndSum(n){;
 
  var sum = 0;
@@ -83,9 +84,9 @@ console.log(fib(3));
             else{console.log("Cannot calculate")}
    
 }
-console.log(pAndSum(1233)) ;
+//console.log(pAndSum(1233)) ;
 
-
+//5
 function startEnd(a, b, num) {
   var arr = [];
   var inter = (b - a) / (num - 1);
@@ -95,7 +96,7 @@ function startEnd(a, b, num) {
   return arr;
 }
 
-console.log(startEnd(1,5,6));
+//console.log(startEnd(1,5,6));
 
 
 //6
@@ -120,23 +121,20 @@ function secondLargeNumber(arr){
 
 console.log(secondLargeNumber([23, -98, 0, -456, 12, 8]));
 
+//7
+function fillArray(arr,pad,repeat) {
+ let result=[...arr];
+ let start=arr.slice(0,pad);
+ let end=arr.slice(-pad);
+ for(let i=0;i<repeat;i++){
 
-
-function fillArray(arr,pad) {
+ 	result=start.concat(result,end);
+ }
+ 	return result;
  
- 	
- //	var first=arr[0];
- //	var last=arr[arr.length - 1];
- //	var lastArr=new Array(repeat).slice(0,pad);
- //   var firstArr=new Array(repeat).slice(first,pad+1);
-
- //  return firstArr.concat(arr,lastArr)
- var lastArr=arr.slice(0,pad);
- return lastArr;
 }
 
-console.log(fillArray([1,2,3,4], 2))
-
+console.log(fillArray([1,2,3,4],1,2))
 
 
 
