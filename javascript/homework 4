@@ -1,0 +1,119 @@
+//1
+function largeArr(arr,n){
+
+var arr2=[];
+
+for(var i=0; i<arr.length;i++){
+
+	if(arr[i]>n){
+
+		arr2.push(arr[i]);
+	}
+	
+}
+return arr2;
+
+}
+
+//console.log(largeArr([10, 25, 16, -5, 30, 15, 24] , 16));
+
+//2 
+
+function range(start, end) {
+    var arr = [];
+    var result=[];
+    for (let i = start; i <= end; i++) {
+       			 if(i%2==0){
+
+          			 result.push(i);
+
+          			 for(j=0;j<result.length;j++){
+
+          			 		if((Math.floor((result[j]/10)))%2==0){
+
+          			 			arr.push(result[j]);
+          			 			var sorted= arr.sort(function(a, b) {
+
+ 								 return a -b;
+
+          			 			
+
+								});
+          			 		}
+
+          			 }
+          			 
+        }
+
+        }
+        
+    
+    return Array.from(new Set(sorted))
+}
+
+console.log(range(19, 42))
+
+//3
+
+
+function isEven(num){
+
+	 	 if(num<10&&num%2!==0){
+	 	 	 return true;
+	 	 }
+
+       if(num>=10){
+
+            return !isEven(Math.floor(num/10));
+        }
+        return false;
+    }
+
+    console.log(isEven(4211133))
+
+
+
+//5
+
+function isSortedarr(arr){
+
+var arr=[2, 12, 15, 48, 64];
+
+
+ for(i=0;i<arr.length;i++){
+
+ 	if(arr[i]>arr[i+1]){
+ 		console.log(arr.indexOf(i,i+1));
+ 	}
+
+ 	  
+ }
+return -1
+
+}
+console.log(isSortedarr())
+
+
+//4 had bad result with recursion
+
+function minimumPositive(arr){
+
+var arr_2=[];
+var sorted;
+
+for (i=0;i<arr.length;i++){
+
+
+		if(arr[i]>=0){
+			arr_2.push(arr[i]);
+			var sorted= arr_2.sort(function(a, b) {
+  return a - b;
+});
+		}
+
+}
+
+return sorted[0];
+
+}
+console.log(minimumPositive([45, -9, 15, 5, -78]))
