@@ -117,3 +117,18 @@ return sorted[0];
 
 }
 console.log(minimumPositive([45, -9, 15, 5, -78]))
+
+// ancac chlucvac xndiry
+function kSubsetPermutations(set, k, partial) {
+    if (!partial) partial = [];                 
+    for (var element in set) {
+        if (k > 1) {
+            var set_copy = set.slice();         
+            set_copy.splice(element, 1);        
+            kSubsetPermutations(set_copy, k - 1, partial.concat([set[element]]));
+        }                                       
+        else console.log("[" + partial.concat([set[element]]) + "] ");
+    }
+}
+console.log(kSubsetPermutations([1,2,3,4,5], 3))
+
