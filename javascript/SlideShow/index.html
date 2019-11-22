@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="slide_style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="slideshow-container">
+
+        <div class="realisatie" id="slideshow"> 
+        <img class="Realisaties" src="2.jpg" alt="here could be your pic :)"> 
+        <img class="Realisaties" src="3.jpg " alt="here could be your pic :)"> 
+        <img class="Realisaties" src="4.jpg" alt="here could be your pic :)"> 
+        <img class="Realisaties" src="1.jpg" alt="here could be your pic :)"> 
+        <img class="Realisaties" src="5.jpg" alt="here could be your pic :)"> 
+        
+   
+    <button class="controls" id="pause">Pause</button>
+    <a class="prev" onclick="plusSlides(0)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+    <script>
+        var myIndex = 1;
+        carousel(myIndex);
+
+      function plusSlides(n) {
+        carousel(myIndex += n);
+        }
+
+    function currentSlide(n) {
+
+      carousel(myIndex = n);
+   }
+
+            var playing = true;
+            var pauseButton = document.getElementById('pause');
+            var myIndex = 0;
+            
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("Realisaties");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) {
+                    myIndex = 1
+                }
+                x[myIndex - 1].style.display = "block";
+            }
+            
+            
+            function pauseSlideshow(){
+                pauseButton.innerHTML = 'Play';
+                playing = false;
+                clearInterval(slideInterval);
+            }
+            
+            function playSlideshow(){
+                pauseButton.innerHTML = 'Pause';
+                playing = true;
+                slideInterval = setInterval(carousel, 2000);
+            }
+            
+            pauseButton.onclick = function(){
+                if(playing){
+                    pauseSlideshow();
+                }
+                else{
+                    playSlideshow();
+                }
+            };
+            
+            carousel();
+            playSlideshow();
+            </script>
+
+
+</body>
+</html> 
