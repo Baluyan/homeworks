@@ -79,4 +79,74 @@ set price(y){
 
 }
 
-//2
+
+/2
+ class Account{
+	constructor(id, name, balance) {
+	    this.id = id;
+	    this.balance=balance;
+	    this.name=name;
+  }
+	
+	set balance(x){	
+ 	this.balance=x;
+
+ }
+
+	set name(y){
+		this.name=y;
+	}
+	get name() {
+         return this.name;
+      }
+
+	 get balance(){
+
+   		return this.balance;
+
+  	 }
+    get id(){
+
+   		return this.id;
+
+   }
+
+
+   credit(amount){
+
+   		balance= amount+ this.balance;
+   		 return balance;
+
+   }
+   debit(amount){
+
+   		if(this.balance>amount){
+   		 	return this.balance-amount;
+   		}
+
+   		else{
+
+   		   return “Amount exceeded balance.”
+   		}
+   }
+
+
+   transferTo(anotherAccount, amount){
+
+   		if(this.balance>amount){
+   		 	anotherAccount= this.balance-amount;
+   		}
+
+   		else{
+
+   		   return “Amount exceeded balance.”
+   		}
+return this.balance;
+   }
+
+   static identifyAccounts(accountFirst, accountSecond){
+
+
+   
+   }
+}
