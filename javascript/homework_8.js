@@ -80,7 +80,7 @@ set price(y){
 }
 
 
-/2
+///2
  class Account{
 	constructor(id, name, balance) {
 	    this.id = id;
@@ -147,6 +147,82 @@ return this.balance;
    static identifyAccounts(accountFirst, accountSecond){
 
 
-   
+
    }
+
+   toString() {
+        return '(' + this.id + ', ' + this.name + ', ' + this.balance')';
+    }
+
+}
+
+
+//3
+
+class Person{
+	constructor(age, firstName, lastName,gender) {
+	    this.firstName= firstName;
+	    this.lastName=lastName;
+	    this.gender=gender;
+	    this.age=age;
+  }
+
+  set firstName(y){
+		this.firstName=y;
+	}
+
+  set lastName(x){
+		this.lastName=x;
+	}
+
+  set firstName(z){
+		this.age=z;
+	}
+  set firstName(c){
+		this.gender=c;
+	}
+	get firstName() {
+         return this.firstName;
+      }
+
+	 get age(){
+
+   		return this.age;
+
+  	 }
+    get lastName(){
+
+   		return this.lastName;
+
+   }
+   get gender(){
+
+   		return this.gender;
+
+   }
+
+   toString() {
+        return '(' + this.firstName + ', ' + this.lastName + ', ' + this.age + ', ' + this.gender')';
+    }
+}
+
+class Student extends Person{
+   constructor(program, year, fee,grade) {
+	    this.program= program.split(" ");
+	    this.year=year;
+	    this.fee=fee;
+	    this.grade=grade;
+  }
+
+  passExam(program, grade){
+
+      var year=0;
+      if(this.garde>=50){
+
+      		this.year++;
+
+      }
+return this.year;
+
+  }
 }
