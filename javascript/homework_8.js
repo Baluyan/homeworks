@@ -80,7 +80,7 @@ set price(y){
 }
 
 
-///2
+///2 to be complited
  class Account{
 	constructor(id, name, balance) {
 	    this.id = id;
@@ -157,7 +157,7 @@ return this.balance;
 }
 
 
-//3
+//3 to be complited
 
 class Person{
 	constructor(age, firstName, lastName,gender) {
